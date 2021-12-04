@@ -1,0 +1,6 @@
+framework module Pods_AppStore_PPTests {
+  umbrella header "Pods-AppStore_PPTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
