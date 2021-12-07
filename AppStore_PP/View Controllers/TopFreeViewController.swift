@@ -13,10 +13,8 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
     var user: AppUser!
     var reference: DatabaseReference!
     
-    var currentManager: CurrentManager?
     var model: Model?
 
-    
     var imageCell: UIImage?
     
     @IBOutlet weak var tableView: UITableView!
@@ -31,7 +29,16 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
         reference = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Detail" {
+            if let indexPath  = self.tableView.indexPathForSelectedRow {
+                let detailController = segue.destination as? DetailViewController
+                detailController!.detailData = (model?.feed.results[indexPath.row].name)!
+                detailController?.imageData = (model?.feed.results[indexPath.row].artworkUrl100)!
+        }
+    }
+}
+    
     // TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if model != nil {
@@ -46,8 +53,7 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         cell?.nameLabel.text = model?.feed.results[indexPath.row].name
         cell?.descriptionLabel.text = model?.feed.results[indexPath.row].genres.first?.name
-
-        
+   
         guard let receivedImage = try? Data(contentsOf: URL(string: (model?.feed.results[indexPath.row].artworkUrl100)!)!) else {return cell!}
         cell?.imageLabel.image = UIImage(data: receivedImage)
         cell?.imageLabel.layer.cornerRadius = 20
@@ -55,6 +61,8 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         return cell!
     }
+    
+
     
 }
 

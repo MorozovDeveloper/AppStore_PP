@@ -9,11 +9,12 @@ import Foundation
 import UIKit
 
 extension TopFreeViewController {
-    
+
     func parseAPI() {
         
-        let urlString = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/25/apps.json"
-        guard let url = URL(string: urlString) else {return}
+        let freeUrlString = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/25/apps.json"
+        
+        guard let url = URL(string: freeUrlString) else {return}
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {return}
@@ -24,7 +25,6 @@ extension TopFreeViewController {
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    
                 }
             }
             
@@ -33,7 +33,6 @@ extension TopFreeViewController {
             }
             
         }.resume()
-        
     }
 }
 

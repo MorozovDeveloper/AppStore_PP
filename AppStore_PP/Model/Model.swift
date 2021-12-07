@@ -11,7 +11,6 @@ struct Model: Decodable {
     let feed: Feed
 }
 
-
 struct Feed: Decodable {
     let title: String
     let id: String
@@ -23,12 +22,10 @@ struct Feed: Decodable {
     let results: [Result]
 }
 
-
 struct Author: Decodable {
     let name: String
     let url: String
 }
-
 
 struct Link: Decodable {
     let linkSelf: String
@@ -38,7 +35,6 @@ struct Link: Decodable {
     }
 }
 
-
 struct Result: Decodable {
     let artistName, id, name, releaseDate: String
     let kind: Kind
@@ -46,7 +42,6 @@ struct Result: Decodable {
     let genres: [Genre]
     let url: String
 }
-
 
 struct Genre: Decodable {
     let genreID, name: String
