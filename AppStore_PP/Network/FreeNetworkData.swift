@@ -13,7 +13,6 @@ extension TopFreeViewController {
     func parseAPI() {
         
         let freeUrlString = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/25/apps.json"
-        
         guard let url = URL(string: freeUrlString) else {return}
         
         URLSession.shared.dataTask(with: url) { data, response, error in

@@ -8,12 +8,12 @@
 import UIKit
 
 class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var model: Model?
     var price = [100.00, 200.00, 300.00, 500.00, 600.00]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         parseAPI()
@@ -30,7 +30,7 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if model != nil {
             return (model?.feed.results.count)!
@@ -58,6 +58,6 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell2!
     }
-
+    
     
 }

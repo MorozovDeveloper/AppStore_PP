@@ -67,6 +67,7 @@ class LoginViewController: UIViewController {
             self.displayWarninfLabel(withText: "Info is incorrect")
             return
         }
+        
         // для входа зарегестрированного юзера
         Auth.auth().signIn(withEmail: email, password: password, completion: { [weak self] (user, error) in
             if error != nil {

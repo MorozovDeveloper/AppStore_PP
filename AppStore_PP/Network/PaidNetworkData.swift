@@ -30,6 +30,7 @@ extension TopPaidViewController {
             catch {
                 print(error, "ERROR")
             }
+            
         }.resume()
     }
 }

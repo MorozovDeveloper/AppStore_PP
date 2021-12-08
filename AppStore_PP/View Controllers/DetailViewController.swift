@@ -7,8 +7,8 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-
+class DetailViewController: UIViewController, CAAnimationDelegate {
+    
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var detailName: UILabel!
     @IBOutlet weak var detailPrice: UILabel!
@@ -23,39 +23,89 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailName.textColor = view.backgroundColor
-        detailPrice.textColor = view.backgroundColor
-        detailImage.layer.cornerRadius = 15
-        detailImage.layer.borderWidth = 6
-        detailImage.layer.borderColor = view.backgroundColor?.cgColor
-        detailPrice.layer.cornerRadius = 7
-        detailPrice.clipsToBounds = true
-
-        colorView.layer.cornerRadius = 25
-        colorView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        appearanceUIelements()
         
-        detailWallet.text = "Счет: \(2000.0) ₽"
-        detailWallet.textColor = view.backgroundColor
+        //        guard let receivedImage = try? Data(contentsOf: URL(string: imageData)!) else {return}
+        //        detailImage.image = UIImage(data: receivedImage)
+        //        detailName.text = detailData
         
-        if priceData == nil {
-            detailPrice.isHidden = true
-            loadBuyButton.setTitle("Загрузить", for: .normal)
-            loadBuyButton.backgroundColor = view.backgroundColor
-            loadBuyButton.layer.cornerRadius = 15
-            loadBuyButton.setTitleColor(.white, for: .normal)
-        } else {
-            detailPrice.text = "\(priceData!) ₽"
-            loadBuyButton.setTitle("Купить ₽", for: .normal)
-            loadBuyButton.backgroundColor = .systemGreen
-            loadBuyButton.layer.cornerRadius = 15
-            loadBuyButton.setTitleColor(.white, for: .normal)
+        
+        shapeLayer = CAShapeLayer()
+        view.layer.addSublayer(shapeLayer)
+        
+        overShapeLayer = CAShapeLayer()
+        view.layer.addSublayer(overShapeLayer)
+        
+        configShapeLayer(shapeLayer)
+        configShapeLayer(overShapeLayer)
+        
+    }
+    
+    
+    @IBAction func actionButton(_ sender: UIButton) {
+        
+        if priceData == nil{
+            let animation = CABasicAnimation(keyPath: "strokeEnd")
+            animation.toValue = 1
+            animation.duration = 2
+            
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+            animation.fillMode = CAMediaTimingFillMode.both
+            animation.isRemovedOnCompletion = false
+            
+            animation.delegate = self
+            
+            overShapeLayer.add(animation, forKey: nil)
+            
+        }  else if priceData != nil {
+            // pop-up menu
             
         }
         
-        guard let receivedImage = try? Data(contentsOf: URL(string: imageData)!) else {return}
-        detailImage.image = UIImage(data: receivedImage)
-        detailName.text = detailData
-
+    }
+    
+    var shapeLayer: CAShapeLayer! {
+        didSet {
+            shapeLayer.lineWidth = 20
+            shapeLayer.lineCap = .round // закругление
+            shapeLayer.fillColor = nil
+            shapeLayer.strokeEnd = 1
+            let color = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1).cgColor
+            shapeLayer.strokeColor = color
+        }
+    }
+    
+    var overShapeLayer: CAShapeLayer! {
+        didSet {
+            overShapeLayer.lineWidth = 20
+            overShapeLayer.lineCap = .round
+            overShapeLayer.fillColor = nil
+            overShapeLayer.strokeEnd = 0
+            let color = UIColor.systemYellow.cgColor
+            overShapeLayer.strokeColor = color
+        }
+    }
+    
+    func configShapeLayer(_ shapeLayer: CAShapeLayer) {
+        shapeLayer.frame = view.bounds
+        let path = UIBezierPath() // траектория
+        path.move(to: CGPoint(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 2))
+        path.addLine(to: CGPoint(x: self.view.frame.width / 2 + 100, y: self.view.frame.height / 2))
+        shapeLayer.path = path.cgPath // присвоение траектории
+    }
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        let doneLabel = UILabel()
+        doneLabel.frame = CGRect(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 2 + 15, width: 200, height: 25)
+        doneLabel.backgroundColor = view.backgroundColor
+        doneLabel.text = "Загружено"
+        doneLabel.textAlignment = .center
+        doneLabel.textColor = .systemYellow
+        view.addSubview(doneLabel)
     }
     
 }
+
+
+
+
