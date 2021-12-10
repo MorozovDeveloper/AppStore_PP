@@ -18,7 +18,8 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
     
     var detailData = ""
     var imageData = ""
-    var priceData: Double?
+    var priceData: Double!
+    var myWallet = 3000.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,10 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
         //        detailImage.image = UIImage(data: receivedImage)
         //        detailName.text = detailData
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         shapeLayer = CAShapeLayer()
         view.layer.addSublayer(shapeLayer)
@@ -38,13 +43,12 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
         
         configShapeLayer(shapeLayer)
         configShapeLayer(overShapeLayer)
-        
     }
     
     
     @IBAction func actionButton(_ sender: UIButton) {
         
-        if priceData == nil{
+        if loadBuyButton.currentTitle == "Загрузить"{
             let animation = CABasicAnimation(keyPath: "strokeEnd")
             animation.toValue = 1
             animation.duration = 2
@@ -57,12 +61,58 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
             
             overShapeLayer.add(animation, forKey: nil)
             
-        }  else if priceData != nil {
-            // pop-up menu
+        }  else {
             
+            alertController(title: "Купить?", message: "Со счета будет списано: \(priceData!) ₽")
+
+        }
+    }
+    
+    func displayWalletLabel(withText text: String) {
+        detailWallet.text = text
+        detailWallet.textColor = .red
+        UIView.animate(withDuration: 2,
+                       delay: 1,
+                       usingSpringWithDamping: 1,
+                       initialSpringVelocity: 1,
+                       options: .curveEaseOut,
+                       animations: {[weak self] in self?.detailWallet.alpha = 0})
+        {[weak self] complete in self?.detailWallet.alpha = 1
+            self?.detailWallet.text = "Счет: \(self!.myWallet - self!.priceData) ₽"
+            self?.detailWallet.textColor = self?.view.backgroundColor}
+    }
+    
+    
+    func alertController (title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Купить", style:  .default) { _ in
+            if self.myWallet > self.priceData {
+                
+                self.detailWallet.text = "Счет: \(self.myWallet - self.priceData) ₽"
+                self.detailPrice.text = nil
+                self.loadBuyButton.setTitle("Загрузить", for: .normal)
+                self.loadBuyButton.backgroundColor = self.view.backgroundColor
+                self.loadBuyButton.layer.cornerRadius = 15
+                self.loadBuyButton.setTitleColor(.white, for: .normal)
+                self.displayWalletLabel(withText: "-\(self.priceData!)₽")
+                
+            } else {
+                let alertError = UIAlertController(title: "Недостаточно средств", message: "Пополните счет", preferredStyle: .alert)
+                let alertActionError = UIAlertAction(title: "OK", style:  .default)
+                self.present(alertError, animated: true)
+                alertError.addAction(alertActionError)
+                
+            }
         }
         
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+        
+        present(alert, animated: true)
+        alert.addAction(cancelAction)
+        alert.addAction(alertAction)
+        
     }
+    
     
     var shapeLayer: CAShapeLayer! {
         didSet {
