@@ -16,10 +16,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var warnLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.layer.cornerRadius = 10
+        registerButton.layer.cornerRadius = 10
+        
         warnLabel.alpha = 0
+        
         // keyboard
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(kbDidShow),

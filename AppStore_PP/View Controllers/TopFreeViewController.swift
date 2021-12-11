@@ -6,12 +6,8 @@
 //
 
 import UIKit
-import Firebase
 
 class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var user: AppUser!
-    var reference: DatabaseReference!
     
     var model: Model?
     
@@ -19,15 +15,10 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    @IBOutlet weak var testImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         parseAPI()
-        // вроде лишнее, проверить !!!
-        guard let currentUser = Auth.auth().currentUser else {return}//не нашли - выходим
-        user = AppUser(user: currentUser)
-        reference = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

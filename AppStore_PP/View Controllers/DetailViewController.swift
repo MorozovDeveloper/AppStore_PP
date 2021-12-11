@@ -23,12 +23,12 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         appearanceUIelements()
         
-        //        guard let receivedImage = try? Data(contentsOf: URL(string: imageData)!) else {return}
-        //        detailImage.image = UIImage(data: receivedImage)
-        //        detailName.text = detailData
+                guard let receivedImage = try? Data(contentsOf: URL(string: imageData)!) else {return}
+                detailImage.image = UIImage(data: receivedImage)
+                detailName.text = detailData
         
     }
     
@@ -62,11 +62,10 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
             overShapeLayer.add(animation, forKey: nil)
             
         }  else {
-            
             alertController(title: "Купить?", message: "Со счета будет списано: \(priceData!) ₽")
-
         }
     }
+    
     
     func displayWalletLabel(withText text: String) {
         detailWallet.text = text
@@ -120,7 +119,7 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
             shapeLayer.lineCap = .round // закругление
             shapeLayer.fillColor = nil
             shapeLayer.strokeEnd = 1
-            let color = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1).cgColor
+            let color = #colorLiteral(red: 0.1912825248, green: 0.5740641828, blue: 0.736538669, alpha: 1).cgColor
             shapeLayer.strokeColor = color
         }
     }
@@ -131,7 +130,7 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
             overShapeLayer.lineCap = .round
             overShapeLayer.fillColor = nil
             overShapeLayer.strokeEnd = 0
-            let color = UIColor.systemYellow.cgColor
+            let color = colorView.backgroundColor?.cgColor
             overShapeLayer.strokeColor = color
         }
     }
@@ -150,7 +149,7 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
         doneLabel.backgroundColor = view.backgroundColor
         doneLabel.text = "Загружено"
         doneLabel.textAlignment = .center
-        doneLabel.textColor = .systemYellow
+        doneLabel.textColor = colorView.backgroundColor
         view.addSubview(doneLabel)
     }
     

@@ -12,11 +12,19 @@ extension DetailViewController {
     
     func appearanceUIelements() {
         
+        colorView.layer.shadowOpacity = 8
+        colorView.layer.shadowRadius = 8
+        
+        loadBuyButton.layer.shadowOpacity = 0.5
+        loadBuyButton.layer.shadowRadius = 3
+        loadBuyButton.layer.shadowOffset = CGSize(width: 0, height: 5)
+        
         detailName.textColor = view.backgroundColor
         detailPrice.textColor = view.backgroundColor
         detailImage.layer.cornerRadius = 15
-        detailImage.layer.borderWidth = 6
-        detailImage.layer.borderColor = view.backgroundColor?.cgColor
+        detailImage.layer.shadowOpacity = 0.5
+        detailImage.layer.shadowRadius = 3
+        detailImage.layer.shadowOffset = CGSize(width: 0, height: 5)
         detailPrice.layer.cornerRadius = 7
         detailPrice.clipsToBounds = true
         
@@ -29,6 +37,7 @@ extension DetailViewController {
         if priceData == nil {
             detailPrice.isHidden = true
             loadBuyButton.setTitle("Загрузить", for: .normal)
+            loadBuyButton.setTitleColor(UIColor.red, for: .normal)
             loadBuyButton.backgroundColor = view.backgroundColor
             loadBuyButton.layer.cornerRadius = 15
             loadBuyButton.setTitleColor(.white, for: .normal)
