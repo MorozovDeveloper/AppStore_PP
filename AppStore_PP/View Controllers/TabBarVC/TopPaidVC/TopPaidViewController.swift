@@ -12,7 +12,7 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var model: Model?
-    var price = [100.00, 200.00, 300.00, 500.00, 600.00]
+    var fakePrice = [100.00, 500.00, 6000.00]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
                 guard let detailController = segue.destination as? DetailViewController else {return}
                 detailController.detailData = (model?.feed.results[indexPath.row].name)!
                 detailController.imageData = (model?.feed.results[indexPath.row].artworkUrl100)!
-                detailController.priceData = price.randomElement()
+                detailController.priceData = fakePrice.randomElement()
             }
         }
     }
@@ -44,7 +44,7 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         cell2?.nameLabel.text = model?.feed.results[indexPath.row].name
         cell2?.descriptionLabel.text = model?.feed.results[indexPath.row].genres.first?.name
-        cell2?.priceLabel.text = "\(price.randomElement()!) ₽"
+        cell2?.priceLabel.text = "\(fakePrice.randomElement()!) ₽"
         cell2?.priceLabel.layer.cornerRadius = 7
         cell2?.priceLabel.clipsToBounds = true
         cell2?.priceLabel.layer.borderWidth = 0.2

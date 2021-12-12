@@ -69,7 +69,6 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
         }
     }
     
-    
     func displayWalletLabel(withText text: String) {
         detailWallet.text = text
         detailWallet.textColor = .red
@@ -91,7 +90,7 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
             if self.myWallet > self.priceData {
                 
                 self.detailWallet.text = "Счет: \(self.myWallet - self.priceData) ₽"
-                self.detailPrice.text = nil
+                self.detailPrice.text = "Куплено"
                 self.loadBuyButton.setTitle("Загрузить", for: .normal)
                 self.loadBuyButton.backgroundColor = self.view.backgroundColor
                 self.loadBuyButton.layer.cornerRadius = 15
@@ -99,7 +98,7 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
                 self.displayWalletLabel(withText: "-\(self.priceData!)₽")
                 
             } else {
-                let alertError = UIAlertController(title: "Недостаточно средств", message: "Пополните счет", preferredStyle: .alert)
+                let alertError = UIAlertController(title: "Недостаточно средств", message: "Выберите другое приложение", preferredStyle: .alert)
                 let alertActionError = UIAlertAction(title: "OK", style:  .default)
                 self.present(alertError, animated: true)
                 alertError.addAction(alertActionError)

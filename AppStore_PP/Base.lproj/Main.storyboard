@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aQA-rX-YjP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1w0-QN-hmW">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -164,7 +164,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYw-9f-mqg">
-                                        <rect key="frame" x="8" y="39" width="87" height="31"/>
+                                        <rect key="frame" x="8" y="39" width="65" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="arrowshape.turn.up.backward" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
@@ -179,8 +179,11 @@
                                             <action selector="backButton:" destination="Kaw-CU-9Ro" eventType="touchUpInside" id="0Rj-0i-sGY"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Счет: 0000.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1S-9U-XW7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счет: 0000.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1S-9U-XW7">
                                         <rect key="frame" x="279" y="52" width="103" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="103" id="n7O-M8-iKk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -191,7 +194,6 @@
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="leading" secondItem="S12-dn-hrt" secondAttribute="leading" id="0f4-VV-Hba"/>
                                     <constraint firstItem="rDw-6h-MtP" firstAttribute="leading" secondItem="Qb4-kH-58l" secondAttribute="leading" constant="7" id="2PX-qG-1Kw"/>
                                     <constraint firstItem="bYz-R1-Lts" firstAttribute="top" secondItem="qA8-hN-9wm" secondAttribute="bottom" constant="30" id="2aB-4C-6rr"/>
-                                    <constraint firstItem="S12-dn-hrt" firstAttribute="top" secondItem="bYz-R1-Lts" secondAttribute="bottom" constant="32" id="3SP-Vo-t0B"/>
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="top" secondItem="w1S-9U-XW7" secondAttribute="bottom" constant="10" id="9Tg-s0-Oj8"/>
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="leading" secondItem="rDw-6h-MtP" secondAttribute="trailing" constant="8" symbolic="YES" id="DKk-BU-F0q"/>
                                     <constraint firstItem="w1S-9U-XW7" firstAttribute="top" secondItem="Qb4-kH-58l" secondAttribute="top" constant="52" id="Dtm-1r-zgj"/>
@@ -200,6 +202,7 @@
                                     <constraint firstItem="MYw-9f-mqg" firstAttribute="top" secondItem="Qb4-kH-58l" secondAttribute="top" constant="39" id="cqL-Rj-W5c"/>
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="trailing" secondItem="S12-dn-hrt" secondAttribute="trailing" id="djU-yq-Gwy"/>
                                     <constraint firstItem="MYw-9f-mqg" firstAttribute="leading" secondItem="Qb4-kH-58l" secondAttribute="leading" constant="8" id="gni-bz-Wm0"/>
+                                    <constraint firstItem="S12-dn-hrt" firstAttribute="top" secondItem="bYz-R1-Lts" secondAttribute="bottom" constant="32" id="hqK-9K-3dI"/>
                                     <constraint firstItem="rDw-6h-MtP" firstAttribute="top" secondItem="w1S-9U-XW7" secondAttribute="bottom" constant="10" id="pXj-6d-abl"/>
                                     <constraint firstItem="w1S-9U-XW7" firstAttribute="leading" secondItem="MYw-9f-mqg" secondAttribute="trailing" constant="206" id="qaW-Yf-qwJ"/>
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="trailing" secondItem="w1S-9U-XW7" secondAttribute="trailing" id="w7A-jR-Spx"/>
