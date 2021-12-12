@@ -15,6 +15,7 @@
 		7C682878275E084000C83C2D /* TopPaidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C682877275E084000C83C2D /* TopPaidViewController.swift */; };
 		7C68287A275E094200C83C2D /* TopPaidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C682879275E094200C83C2D /* TopPaidTableViewCell.swift */; };
 		7C682880275E170800C83C2D /* PaidNetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C68287F275E170800C83C2D /* PaidNetworkData.swift */; };
+		7C7142DE276607E00008B7F5 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7142DD276607E00008B7F5 /* Notes.rtf */; };
 		7C7CDB5B275CA37D007EB420 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7CDB5A275CA37D007EB420 /* Model.swift */; };
 		7C7CDB61275CA6F7007EB420 /* FreeNetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7CDB60275CA6F7007EB420 /* FreeNetworkData.swift */; };
 		7C7CDB63275CAE8A007EB420 /* TopFreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7CDB62275CAE8A007EB420 /* TopFreeTableViewCell.swift */; };
@@ -30,6 +31,7 @@
 		7C80C4642753879F00A7394A /* AppStore_PPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C80C4632753879F00A7394A /* AppStore_PPUITestsLaunchTests.swift */; };
 		7C8C2F28275E4F59001C4B7A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C2F27275E4F59001C4B7A /* DetailViewController.swift */; };
 		7CA591DC2760B4BE004AE8C6 /* AppearanceUIelements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA591DB2760B4BE004AE8C6 /* AppearanceUIelements.swift */; };
+		7CF22EBE2766370D008B00B8 /* ShapeAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF22EBD2766370D008B00B8 /* ShapeAnimationLayer.swift */; };
 		DBD2C742E6F7F75BED652ED2 /* Pods_AppStore_PP_AppStore_PPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8478E7021468701728D9DC6B /* Pods_AppStore_PP_AppStore_PPUITests.framework */; };
 		E12BF01FA1023AED3FDA08AB /* Pods_AppStore_PP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BB2FB9ACD4B1062B6418A8 /* Pods_AppStore_PP.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,7 @@
 		7C682877275E084000C83C2D /* TopPaidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPaidViewController.swift; sourceTree = "<group>"; };
 		7C682879275E094200C83C2D /* TopPaidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPaidTableViewCell.swift; sourceTree = "<group>"; };
 		7C68287F275E170800C83C2D /* PaidNetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidNetworkData.swift; sourceTree = "<group>"; };
+		7C7142DD276607E00008B7F5 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
 		7C7CDB5A275CA37D007EB420 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7C7CDB60275CA6F7007EB420 /* FreeNetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeNetworkData.swift; sourceTree = "<group>"; };
 		7C7CDB62275CAE8A007EB420 /* TopFreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFreeTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		7C80C4632753879F00A7394A /* AppStore_PPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore_PPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7C8C2F27275E4F59001C4B7A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7CA591DB2760B4BE004AE8C6 /* AppearanceUIelements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceUIelements.swift; sourceTree = "<group>"; };
+		7CF22EBD2766370D008B00B8 /* ShapeAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeAnimationLayer.swift; sourceTree = "<group>"; };
 		8478E7021468701728D9DC6B /* Pods_AppStore_PP_AppStore_PPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_PP_AppStore_PPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E341FB35602C25E95C2E6F /* Pods-AppStore_PP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore_PP.release.xcconfig"; path = "Target Support Files/Pods-AppStore_PP/Pods-AppStore_PP.release.xcconfig"; sourceTree = "<group>"; };
 		B706F7B29B183DE13AA8D3C8 /* Pods-AppStore_PP-AppStore_PPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore_PP-AppStore_PPUITests.release.xcconfig"; path = "Target Support Files/Pods-AppStore_PP-AppStore_PPUITests/Pods-AppStore_PP-AppStore_PPUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				7C8C2F27275E4F59001C4B7A /* DetailViewController.swift */,
+				7CF22EBD2766370D008B00B8 /* ShapeAnimationLayer.swift */,
 				7CA591DB2760B4BE004AE8C6 /* AppearanceUIelements.swift */,
 			);
 			path = DetailVC;
@@ -222,6 +227,7 @@
 				7C7CDB5F275CA6E0007EB420 /* Network */,
 				7C7CDB59275CA325007EB420 /* View Controllers */,
 				7C80C4492753879F00A7394A /* Assets.xcassets */,
+				7C7142DD276607E00008B7F5 /* Notes.rtf */,
 				7C80C44B2753879F00A7394A /* LaunchScreen.storyboard */,
 				7C80C44E2753879F00A7394A /* Info.plist */,
 				7C5A3103275B50180092BB6C /* GoogleService-Info.plist */,
@@ -383,6 +389,7 @@
 				7C5A3104275B50180092BB6C /* GoogleService-Info.plist in Resources */,
 				7C80C44A2753879F00A7394A /* Assets.xcassets in Resources */,
 				7C80C4452753879D00A7394A /* Main.storyboard in Resources */,
+				7C7142DE276607E00008B7F5 /* Notes.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +519,7 @@
 			files = (
 				7C418F402765F555009F35F7 /* Firebase.swift in Sources */,
 				7C682880275E170800C83C2D /* PaidNetworkData.swift in Sources */,
+				7CF22EBE2766370D008B00B8 /* ShapeAnimationLayer.swift in Sources */,
 				7C7CDB5B275CA37D007EB420 /* Model.swift in Sources */,
 				7CA591DC2760B4BE004AE8C6 /* AppearanceUIelements.swift in Sources */,
 				7C80C4422753879D00A7394A /* TopFreeViewController.swift in Sources */,

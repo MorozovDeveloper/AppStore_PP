@@ -11,7 +11,7 @@ import Firebase
 
 extension LoginViewController {
     
-    func createLogin () {
+    func createLogin() {
         guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
             self.displayWarninfLabel(withText: "Info is incorrect")
             return

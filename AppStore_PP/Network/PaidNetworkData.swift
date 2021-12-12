@@ -10,7 +10,7 @@ import UIKit
 
 extension TopPaidViewController {
     
-    func parseAPI() {
+     func parseAPI() {
         
         let paidUrlSring = "https://rss.applemarketingtools.com/api/v2/us/apps/top-paid/25/apps.json"
         guard let url = URL(string: paidUrlSring) else {return}

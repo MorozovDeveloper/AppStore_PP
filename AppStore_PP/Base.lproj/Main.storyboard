@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TopFreeViewController" customModule="AppStore_PP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kuh-6U-T4Z">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="707"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="100" id="hRS-Fv-16q" customClass="TopFreeTableViewCell" customModule="AppStore_PP" customModuleProvider="target">
@@ -76,7 +76,7 @@
                                             <outlet property="descriptionLabel" destination="Sqk-e1-a9e" id="xlH-xq-NPw"/>
                                             <outlet property="imageLabel" destination="tL2-io-HhO" id="QtM-nE-F5h"/>
                                             <outlet property="nameLabel" destination="IP1-rC-C7g" id="Yrp-w4-c1t"/>
-                                            <segue destination="Kaw-CU-9Ro" kind="show" identifier="Detail" id="pY4-LP-dEJ"/>
+                                            <segue destination="Kaw-CU-9Ro" kind="presentation" identifier="Detail" modalPresentationStyle="fullScreen" id="wAM-pa-C3t"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -119,26 +119,20 @@
             <objects>
                 <viewController id="Kaw-CU-9Ro" customClass="DetailViewController" customModule="AppStore_PP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AZ9-IS-jvS">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qb4-kH-58l">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="314"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="379"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счет: 0000.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1S-9U-XW7">
-                                        <rect key="frame" x="8" y="7" width="374" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rDw-6h-MtP">
-                                        <rect key="frame" x="7" y="29" width="145" height="137"/>
+                                        <rect key="frame" x="7" y="77" width="145" height="137"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="136.33333333333331" id="2Gk-9E-DUn"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qA8-hN-9wm">
-                                        <rect key="frame" x="160" y="31" width="222" height="20"/>
+                                        <rect key="frame" x="160" y="78" width="222" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="222" id="wk4-fS-GH1"/>
                                         </constraints>
@@ -147,13 +141,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYz-R1-Lts">
-                                        <rect key="frame" x="160" y="78" width="222" height="20"/>
+                                        <rect key="frame" x="160" y="128" width="222" height="20"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S12-dn-hrt">
-                                        <rect key="frame" x="160" y="126" width="222" height="34"/>
+                                        <rect key="frame" x="160" y="180" width="222" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
@@ -169,21 +163,45 @@
                                             <action selector="actionButton:" destination="Kaw-CU-9Ro" eventType="touchUpInside" id="Pt0-qq-glB"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYw-9f-mqg">
+                                        <rect key="frame" x="8" y="39" width="87" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="arrowshape.turn.up.backward" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
+                                                <hierarchicalColors>
+                                                    <color red="0.56311749150000001" green="0.7769737659" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backButton:" destination="Kaw-CU-9Ro" eventType="touchUpInside" id="0Rj-0i-sGY"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Счет: 0000.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1S-9U-XW7">
+                                        <rect key="frame" x="279" y="52" width="103" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.96562036619470881" blue="0.75241116307112432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="leading" secondItem="S12-dn-hrt" secondAttribute="leading" id="0f4-VV-Hba"/>
                                     <constraint firstItem="rDw-6h-MtP" firstAttribute="leading" secondItem="Qb4-kH-58l" secondAttribute="leading" constant="7" id="2PX-qG-1Kw"/>
-                                    <constraint firstItem="bYz-R1-Lts" firstAttribute="top" secondItem="qA8-hN-9wm" secondAttribute="bottom" constant="27" id="2aB-4C-6rr"/>
-                                    <constraint firstItem="S12-dn-hrt" firstAttribute="top" secondItem="bYz-R1-Lts" secondAttribute="bottom" constant="28" id="3SP-Vo-t0B"/>
-                                    <constraint firstItem="qA8-hN-9wm" firstAttribute="top" secondItem="w1S-9U-XW7" secondAttribute="bottom" constant="8" symbolic="YES" id="9Tg-s0-Oj8"/>
+                                    <constraint firstItem="bYz-R1-Lts" firstAttribute="top" secondItem="qA8-hN-9wm" secondAttribute="bottom" constant="30" id="2aB-4C-6rr"/>
+                                    <constraint firstItem="S12-dn-hrt" firstAttribute="top" secondItem="bYz-R1-Lts" secondAttribute="bottom" constant="32" id="3SP-Vo-t0B"/>
+                                    <constraint firstItem="qA8-hN-9wm" firstAttribute="top" secondItem="w1S-9U-XW7" secondAttribute="bottom" constant="10" id="9Tg-s0-Oj8"/>
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="leading" secondItem="rDw-6h-MtP" secondAttribute="trailing" constant="8" symbolic="YES" id="DKk-BU-F0q"/>
-                                    <constraint firstItem="w1S-9U-XW7" firstAttribute="top" secondItem="Qb4-kH-58l" secondAttribute="top" constant="7" id="Dtm-1r-zgj"/>
+                                    <constraint firstItem="w1S-9U-XW7" firstAttribute="top" secondItem="Qb4-kH-58l" secondAttribute="top" constant="52" id="Dtm-1r-zgj"/>
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="trailing" secondItem="bYz-R1-Lts" secondAttribute="trailing" id="Duf-5Q-dlW"/>
                                     <constraint firstAttribute="trailing" secondItem="w1S-9U-XW7" secondAttribute="trailing" constant="8" id="E6X-5g-wIJ"/>
-                                    <constraint firstItem="w1S-9U-XW7" firstAttribute="leading" secondItem="Qb4-kH-58l" secondAttribute="leading" constant="8" id="aLl-TT-ix1"/>
+                                    <constraint firstItem="MYw-9f-mqg" firstAttribute="top" secondItem="Qb4-kH-58l" secondAttribute="top" constant="39" id="cqL-Rj-W5c"/>
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="trailing" secondItem="S12-dn-hrt" secondAttribute="trailing" id="djU-yq-Gwy"/>
-                                    <constraint firstItem="rDw-6h-MtP" firstAttribute="top" secondItem="w1S-9U-XW7" secondAttribute="bottom" constant="7" id="pXj-6d-abl"/>
+                                    <constraint firstItem="MYw-9f-mqg" firstAttribute="leading" secondItem="Qb4-kH-58l" secondAttribute="leading" constant="8" id="gni-bz-Wm0"/>
+                                    <constraint firstItem="rDw-6h-MtP" firstAttribute="top" secondItem="w1S-9U-XW7" secondAttribute="bottom" constant="10" id="pXj-6d-abl"/>
+                                    <constraint firstItem="w1S-9U-XW7" firstAttribute="leading" secondItem="MYw-9f-mqg" secondAttribute="trailing" constant="206" id="qaW-Yf-qwJ"/>
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="trailing" secondItem="w1S-9U-XW7" secondAttribute="trailing" id="w7A-jR-Spx"/>
                                     <constraint firstItem="qA8-hN-9wm" firstAttribute="leading" secondItem="bYz-R1-Lts" secondAttribute="leading" id="wpw-3e-R2u"/>
                                 </constraints>
@@ -193,8 +211,8 @@
                         <color key="backgroundColor" red="0.56311749150000001" green="0.7769737659" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Qb4-kH-58l" secondAttribute="trailing" id="Zmc-Jn-wnG"/>
-                            <constraint firstItem="Qb4-kH-58l" firstAttribute="height" secondItem="AZ9-IS-jvS" secondAttribute="height" multiplier="0.397468" id="ftl-nY-TP2"/>
-                            <constraint firstItem="Qb4-kH-58l" firstAttribute="top" secondItem="W9z-aB-OXf" secondAttribute="top" id="mVQ-o9-BzX"/>
+                            <constraint firstItem="Qb4-kH-58l" firstAttribute="height" secondItem="AZ9-IS-jvS" secondAttribute="height" multiplier="0.397468" constant="43.537008000000014" id="ftl-nY-TP2"/>
+                            <constraint firstItem="Qb4-kH-58l" firstAttribute="top" secondItem="W9z-aB-OXf" secondAttribute="top" constant="-44" id="mVQ-o9-BzX"/>
                             <constraint firstItem="Qb4-kH-58l" firstAttribute="leading" secondItem="AZ9-IS-jvS" secondAttribute="leading" id="q25-RU-31q"/>
                         </constraints>
                     </view>
@@ -315,7 +333,7 @@
                         <outlet property="passwordTextField" destination="2Rx-ua-oa4" id="J3Q-qN-0BL"/>
                         <outlet property="registerButton" destination="XrD-mz-kDU" id="eab-fC-7wb"/>
                         <outlet property="warnLabel" destination="Lab-O8-DRe" id="Cj3-IA-LmG"/>
-                        <segue destination="RIa-Yd-93c" kind="show" identifier="ShowDetail" id="1Ya-4j-PL7"/>
+                        <segue destination="RIa-Yd-93c" kind="presentation" identifier="ShowDetail" modalPresentationStyle="fullScreen" id="1Ya-4j-PL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NxN-kN-Z7t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -347,11 +365,11 @@
             <objects>
                 <viewController id="1w0-QN-hmW" customClass="TopPaidViewController" customModule="AppStore_PP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jpw-sX-6VN">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="g8q-zi-1HT">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="707"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell2" rowHeight="100" id="mGi-b8-9YC" customClass="TopPaidTableViewCell" customModule="AppStore_PP" customModuleProvider="target">
@@ -417,7 +435,7 @@
                                             <outlet property="imageLabel" destination="kEO-fN-rzi" id="2pM-Cb-ZwV"/>
                                             <outlet property="nameLabel" destination="H5A-qz-Hwg" id="QWv-u1-p9K"/>
                                             <outlet property="priceLabel" destination="2A7-EC-l1E" id="vB2-Mm-6SL"/>
-                                            <segue destination="Kaw-CU-9Ro" kind="show" identifier="Detail2" id="svQ-F5-bcF"/>
+                                            <segue destination="Kaw-CU-9Ro" kind="presentation" identifier="Detail2" modalPresentationStyle="fullScreen" id="svQ-F5-bcF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -457,15 +475,19 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pY4-LP-dEJ"/>
+        <segue reference="svQ-F5-bcF"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="paintpalette" catalog="system" width="128" height="105"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -481,6 +503,9 @@
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
