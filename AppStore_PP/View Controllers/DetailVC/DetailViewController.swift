@@ -112,7 +112,6 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
         
     }
     
-    
     var shapeLayer: CAShapeLayer! {
         didSet {
             shapeLayer.lineWidth = 20

@@ -9,11 +9,10 @@ import UIKit
 
 class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var model: Model?
-    
-    var imageCell: UIImage?
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    var model: Model?
+    var imageCell: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +52,6 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell!
     }
-    
-    
     
 }
 

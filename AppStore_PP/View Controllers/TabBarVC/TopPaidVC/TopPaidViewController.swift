@@ -26,7 +26,6 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
                 detailController.detailData = (model?.feed.results[indexPath.row].name)!
                 detailController.imageData = (model?.feed.results[indexPath.row].artworkUrl100)!
                 detailController.priceData = price.randomElement()
-                
             }
         }
     }
