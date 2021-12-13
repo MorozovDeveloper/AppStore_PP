@@ -14,11 +14,31 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
     var model: Model?
     var imageCell: UIImage?
     
+    let networking = NetworkService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        parseAPI()
-
+    
+        fetch()
+        
+        }
+    
+    private func fetch() {
+        guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/25/apps.json") else {return}
+        
+        networking.parse(url: url) { result in
+            switch result {
+            case .success(let model):
+                DispatchQueue.main.async {
+                    self.model = model
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail" {

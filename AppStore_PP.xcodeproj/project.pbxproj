@@ -14,10 +14,9 @@
 		7C5A3104275B50180092BB6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C5A3103275B50180092BB6C /* GoogleService-Info.plist */; };
 		7C682878275E084000C83C2D /* TopPaidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C682877275E084000C83C2D /* TopPaidViewController.swift */; };
 		7C68287A275E094200C83C2D /* TopPaidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C682879275E094200C83C2D /* TopPaidTableViewCell.swift */; };
-		7C682880275E170800C83C2D /* PaidNetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C68287F275E170800C83C2D /* PaidNetworkData.swift */; };
 		7C7142DE276607E00008B7F5 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7C7142DD276607E00008B7F5 /* Notes.rtf */; };
 		7C7CDB5B275CA37D007EB420 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7CDB5A275CA37D007EB420 /* Model.swift */; };
-		7C7CDB61275CA6F7007EB420 /* FreeNetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7CDB60275CA6F7007EB420 /* FreeNetworkData.swift */; };
+		7C7CDB61275CA6F7007EB420 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7CDB60275CA6F7007EB420 /* NetworkService.swift */; };
 		7C7CDB63275CAE8A007EB420 /* TopFreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7CDB62275CAE8A007EB420 /* TopFreeTableViewCell.swift */; };
 		7C80C43E2753879D00A7394A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C80C43D2753879D00A7394A /* AppDelegate.swift */; };
 		7C80C4402753879D00A7394A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C80C43F2753879D00A7394A /* SceneDelegate.swift */; };
@@ -65,10 +64,9 @@
 		7C5A3103275B50180092BB6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C682877275E084000C83C2D /* TopPaidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPaidViewController.swift; sourceTree = "<group>"; };
 		7C682879275E094200C83C2D /* TopPaidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPaidTableViewCell.swift; sourceTree = "<group>"; };
-		7C68287F275E170800C83C2D /* PaidNetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidNetworkData.swift; sourceTree = "<group>"; };
 		7C7142DD276607E00008B7F5 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
 		7C7CDB5A275CA37D007EB420 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		7C7CDB60275CA6F7007EB420 /* FreeNetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeNetworkData.swift; sourceTree = "<group>"; };
+		7C7CDB60275CA6F7007EB420 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		7C7CDB62275CAE8A007EB420 /* TopFreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFreeTableViewCell.swift; sourceTree = "<group>"; };
 		7C80C43A2753879D00A7394A /* AppStore_PP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore_PP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C80C43D2753879D00A7394A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,8 +187,7 @@
 		7C7CDB5F275CA6E0007EB420 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7C7CDB60275CA6F7007EB420 /* FreeNetworkData.swift */,
-				7C68287F275E170800C83C2D /* PaidNetworkData.swift */,
+				7C7CDB60275CA6F7007EB420 /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -518,7 +515,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C418F402765F555009F35F7 /* Firebase.swift in Sources */,
-				7C682880275E170800C83C2D /* PaidNetworkData.swift in Sources */,
 				7CF22EBE2766370D008B00B8 /* ShapeAnimationLayer.swift in Sources */,
 				7C7CDB5B275CA37D007EB420 /* Model.swift in Sources */,
 				7CA591DC2760B4BE004AE8C6 /* AppearanceUIelements.swift in Sources */,
@@ -528,7 +524,7 @@
 				7C68287A275E094200C83C2D /* TopPaidTableViewCell.swift in Sources */,
 				7C80C43E2753879D00A7394A /* AppDelegate.swift in Sources */,
 				7C7CDB63275CAE8A007EB420 /* TopFreeTableViewCell.swift in Sources */,
-				7C7CDB61275CA6F7007EB420 /* FreeNetworkData.swift in Sources */,
+				7C7CDB61275CA6F7007EB420 /* NetworkService.swift in Sources */,
 				7C8C2F28275E4F59001C4B7A /* DetailViewController.swift in Sources */,
 				7C5A3102275B49540092BB6C /* LoginViewController.swift in Sources */,
 				7C80C4402753879D00A7394A /* SceneDelegate.swift in Sources */,

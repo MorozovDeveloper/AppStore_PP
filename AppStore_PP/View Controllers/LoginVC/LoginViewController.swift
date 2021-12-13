@@ -30,8 +30,7 @@ class LoginViewController: UIViewController {
         reference = Database.database().reference(withPath: "users") // для сохранения юзера в базе
         
         registerKeyboardNotification()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        dismissKeyboard()
     }
     
     

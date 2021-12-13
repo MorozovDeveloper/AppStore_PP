@@ -36,8 +36,14 @@ extension LoginViewController {
             height: self.view.bounds.height)
     }
     
+    
     // Скрыть клавиатуру
-    @objc func dismissKeyboard() {
+    func dismissKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKB))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKB() {
         view.endEditing(true)
        
     }

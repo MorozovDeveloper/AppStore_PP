@@ -13,10 +13,10 @@ struct Model: Decodable {
 }
 
 struct Feed: Decodable {
-    let results: [Result]
+    let results: [Results]
 }
 
-struct Result: Decodable {
+struct Results: Decodable {
     let name: String
     let artworkUrl100: String
     let genres: [Genre]
@@ -26,3 +26,20 @@ struct Genre: Decodable {
     let name: String
 }
 
+//class Model: Codable {
+//    let feed: Feed//
+//}
+//
+//class Feed: Codable {
+//    let results: [Result]
+//}
+//
+//class Result: Codable {
+//    let name: String
+//    let artworkUrl100: String
+//    let genres: [Genre]
+//}
+//
+//class Genre: Codable {
+//    let name: String
+//}
