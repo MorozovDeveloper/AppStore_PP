@@ -20,8 +20,7 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
     
         fetch()
-        
-        }
+    }
     
     private func fetch() {
         guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/25/apps.json") else {return}
@@ -44,8 +43,8 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "Detail" {
             if let indexPath  = self.tableView.indexPathForSelectedRow {
                 let detailController = segue.destination as? DetailViewController
-                detailController!.detailData = (model?.feed.results[indexPath.row].name)!
-                detailController?.imageData = (model?.feed.results[indexPath.row].artworkUrl100)!
+                detailController!.detailData = (model?.feed.results[indexPath.row].name) ?? ""
+                detailController?.imageData = (model?.feed.results[indexPath.row].artworkUrl100) ?? ""
             }
         }
     }

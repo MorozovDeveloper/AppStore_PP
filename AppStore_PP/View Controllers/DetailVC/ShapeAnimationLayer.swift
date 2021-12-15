@@ -32,8 +32,7 @@ var overShapeLayer: CAShapeLayer! {
 
 extension DetailViewController {
     
-        func configShapeLayer(_ shapeLayer: CAShapeLayer) {
-        shapeLayer.frame = view.bounds
+    func configShapeLayer(_ shapeLayer: CAShapeLayer) {
         let path = UIBezierPath() // траектория
         path.move(to: CGPoint(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 2))
         path.addLine(to: CGPoint(x: self.view.frame.width / 2 + 100, y: self.view.frame.height / 2))

@@ -16,8 +16,8 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
     @IBOutlet weak var loadBuyButton: UIButton!
     @IBOutlet weak var colorView: UIView!
     
-    var detailData = ""
-    var imageData = ""
+    var detailData: String!
+    var imageData: String!
     var priceData: Double!
     var myWallet = 3000.0
     
@@ -87,8 +87,8 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
     func alertController (title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Купить", style:  .default) { _ in
+            
             if self.myWallet > self.priceData {
-                
                 self.detailWallet.text = "Счет: \(self.myWallet - self.priceData) ₽"
                 self.detailPrice.text = "Куплено"
                 self.loadBuyButton.setTitle("Загрузить", for: .normal)
@@ -98,7 +98,7 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
                 self.displayWalletLabel(withText: "-\(self.priceData!)₽")
                 
             } else {
-                let alertError = UIAlertController(title: "Недостаточно средств", message: "Выберите другое приложение", preferredStyle: .alert)
+                let alertError = UIAlertController(title: "Недостаточно средств", message: "Пополните баланс", preferredStyle: .alert)
                 let alertActionError = UIAlertAction(title: "OK", style:  .default)
                 self.present(alertError, animated: true)
                 alertError.addAction(alertActionError)
@@ -114,8 +114,7 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
         
     }
     
-   
-    
+ 
 }
 
 

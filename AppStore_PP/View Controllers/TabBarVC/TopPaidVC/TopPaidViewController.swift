@@ -44,8 +44,8 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "Detail2" {
             if let indexPath = self.tableView.indexPathForSelectedRow{
                 guard let detailController = segue.destination as? DetailViewController else {return}
-                detailController.detailData = (model?.feed.results[indexPath.row].name)!
-                detailController.imageData = (model?.feed.results[indexPath.row].artworkUrl100)!
+                detailController.detailData = (model?.feed.results[indexPath.row].name) ?? ""
+                detailController.imageData = (model?.feed.results[indexPath.row].artworkUrl100) ?? ""
                 detailController.priceData = fakePrice.randomElement()
             }
         }

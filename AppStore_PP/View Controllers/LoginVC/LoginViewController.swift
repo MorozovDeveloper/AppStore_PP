@@ -27,12 +27,22 @@ class LoginViewController: UIViewController {
         registerButton.layer.cornerRadius = 10
         warnLabel.alpha = 0
         
-        reference = Database.database().reference(withPath: "users") // для сохранения юзера в базе
+        reference = Database.database().reference(withPath: "users") // сохранение юзера в базе
         
         registerKeyboardNotification()
         dismissKeyboard()
     }
     
+    @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
+        if let topPaidVC = unwindSegue.source as? TopPaidViewController {
+            emailTextField.text = ""
+            passwordTextField.text = ""
+        } else if let topFreeVC = unwindSegue.source as? TopFreeViewController {
+            emailTextField.text = ""
+            passwordTextField.text = ""
+        }
+    
+    }
     
     func displayWarninfLabel(withText text: String) {
         warnLabel.text = text
