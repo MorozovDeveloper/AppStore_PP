@@ -34,14 +34,13 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
-        if let topPaidVC = unwindSegue.source as? TopPaidViewController {
+        if let _ = unwindSegue.source as? TopPaidViewController {
             emailTextField.text = ""
             passwordTextField.text = ""
-        } else if let topFreeVC = unwindSegue.source as? TopFreeViewController {
+        } else if let _ = unwindSegue.source as? TopFreeViewController {
             emailTextField.text = ""
             passwordTextField.text = ""
         }
-    
     }
     
     func displayWarninfLabel(withText text: String) {

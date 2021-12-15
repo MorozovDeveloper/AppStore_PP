@@ -10,7 +10,7 @@ import UIKit
 
 
 class NetworkService {
-
+    
     func parse(url: URL, completion: @escaping (Result<Model, Error>) -> Void){
         
         URLSession.shared.dataTask(with: url) { data, _, error in
@@ -20,7 +20,7 @@ class NetworkService {
             guard let data = data else {return}
             
             do {
-             let decode = JSONDecoder()
+                let decode = JSONDecoder()
                 let result = try decode.decode(Model.self, from: data)
                 completion(.success(result))
                 
@@ -29,5 +29,5 @@ class NetworkService {
             }
         }.resume()
     }
- 
+    
 }

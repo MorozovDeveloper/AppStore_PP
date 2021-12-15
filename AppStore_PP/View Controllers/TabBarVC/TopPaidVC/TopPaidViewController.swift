@@ -24,8 +24,8 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func  fetch() {
         guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/apps/top-paid/25/apps.json") else {return}
-        
         networking.parse(url: url) { result in
+            
             switch result {
             case . success(let model):
                 DispatchQueue.main.async {
@@ -36,7 +36,6 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print(error)
             }
         }
-
     }
     
     
