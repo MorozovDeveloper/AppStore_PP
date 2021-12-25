@@ -11,10 +11,8 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
-    var model: Model?
-    var imageCell: UIImage?
-    
-    let networking = NetworkService()
+    var model: NetworkModel?
+    var networking = NetworkService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +34,6 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail" {

@@ -42,7 +42,6 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
         configShapeLayer(detailModel.overShapeLayer)
     }
     
-    
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -66,6 +65,7 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
         }
     }
     
+    // Animation Wallet
     func displayWalletLabel(withText text: String) {
         detailWallet.text = text
         detailWallet.textColor = .red
@@ -80,7 +80,6 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
             self?.detailWallet.textColor = self?.view.backgroundColor}
     }
     
-    
     func alertController (title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Купить", style:  .default) { _ in
@@ -93,18 +92,15 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
                 self.loadBuyButton.layer.cornerRadius = 15
                 self.loadBuyButton.setTitleColor(.white, for: .normal)
                 self.displayWalletLabel(withText: "-\(self.detailModel.priceData!)₽")
-                
             } else {
                 let alertError = UIAlertController(title: "Недостаточно средств", message: "Пополните баланс", preferredStyle: .alert)
                 let alertActionError = UIAlertAction(title: "OK", style:  .default)
                 self.present(alertError, animated: true)
                 alertError.addAction(alertActionError)
-                
             }
         }
         
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
-        
         present(alert, animated: true)
         alert.addAction(cancelAction)
         alert.addAction(alertAction)

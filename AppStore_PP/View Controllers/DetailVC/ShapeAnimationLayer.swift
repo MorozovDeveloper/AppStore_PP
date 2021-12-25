@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 extension DetailViewController {
     
     func configShapeLayer(_ shapeLayer: CAShapeLayer) {

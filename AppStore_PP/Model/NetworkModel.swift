@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Model: Decodable {
+struct NetworkModel: Decodable {
     let feed: Feed
 }
 

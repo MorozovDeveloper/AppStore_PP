@@ -11,14 +11,13 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
-    var model: Model?
-    var fakePrice = [100.00, 500.00, 6000.00]
+    var model: NetworkModel?
+    var networking = NetworkService()
     
-    let networking = NetworkService()
+    var fakePrice = [100.00, 500.00, 6000.00]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetch()
     }
     
@@ -38,7 +37,6 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail2" {
             if let indexPath = self.tableView.indexPathForSelectedRow{
@@ -50,7 +48,7 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    
+    // TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if model != nil {
             return (model?.feed.results.count)!
@@ -58,7 +56,7 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 0
         
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "Cell2", for: indexPath) as? TopPaidTableViewCell

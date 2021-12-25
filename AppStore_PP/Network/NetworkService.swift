@@ -11,7 +11,7 @@ import UIKit
 
 class NetworkService {
     
-    func parse(url: URL, completion: @escaping (Result<Model, Error>) -> Void){
+    func parse(url: URL, completion: @escaping (Result<NetworkModel, Error>) -> Void){
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
@@ -21,7 +21,7 @@ class NetworkService {
             
             do {
                 let decode = JSONDecoder()
-                let result = try decode.decode(Model.self, from: data)
+                let result = try decode.decode(NetworkModel.self, from: data)
                 completion(.success(result))
                 
             } catch {
