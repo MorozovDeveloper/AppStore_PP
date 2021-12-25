@@ -171,6 +171,7 @@
 		7C7CDB59275CA325007EB420 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C80C4432753879D00A7394A /* Main.storyboard */,
 				7C418F3A2765F3C9009F35F7 /* LoginVC */,
 				7C418F3E2765F425009F35F7 /* TabBarVC */,
 				7C418F3D2765F402009F35F7 /* DetailVC */,
@@ -222,7 +223,6 @@
 			children = (
 				7C80C43D2753879D00A7394A /* AppDelegate.swift */,
 				7C80C43F2753879D00A7394A /* SceneDelegate.swift */,
-				7C80C4432753879D00A7394A /* Main.storyboard */,
 				7C7CDB5C275CA5B8007EB420 /* Model */,
 				7C7CDB5F275CA6E0007EB420 /* Network */,
 				7C7CDB59275CA325007EB420 /* View Controllers */,
