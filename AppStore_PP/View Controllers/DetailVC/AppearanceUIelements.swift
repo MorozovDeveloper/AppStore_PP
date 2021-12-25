@@ -30,10 +30,10 @@ extension DetailViewController {
         detailPrice.layer.cornerRadius = 7
         detailPrice.clipsToBounds = true
         
-        detailWallet.text = "Счет: \(myWallet) ₽"
+        detailWallet.text = "Счет: \(detailModel.myWallet) ₽"
         detailWallet.textColor = view.backgroundColor
         
-        if priceData == nil {
+        if detailModel.priceData == nil {
             detailPrice.isHidden = true
             loadBuyButton.setTitle("Загрузить", for: .normal)
             loadBuyButton.setTitleColor(UIColor.red, for: .normal)
@@ -41,7 +41,7 @@ extension DetailViewController {
             loadBuyButton.layer.cornerRadius = 15
             loadBuyButton.setTitleColor(.white, for: .normal)
         } else {
-            detailPrice.text = "\(priceData!) ₽"
+            detailPrice.text = "\(detailModel.priceData!) ₽"
             loadBuyButton.setTitle("Купить ₽", for: .normal)
             loadBuyButton.backgroundColor = .systemGreen
             loadBuyButton.layer.cornerRadius = 15

@@ -18,7 +18,6 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         fetch()
     }
     
@@ -43,8 +42,8 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "Detail" {
             if let indexPath  = self.tableView.indexPathForSelectedRow {
                 let detailController = segue.destination as? DetailViewController
-                detailController!.detailData = (model?.feed.results[indexPath.row].name) ?? ""
-                detailController?.imageData = (model?.feed.results[indexPath.row].artworkUrl100) ?? ""
+                detailController!.detailModel.detailData = (model?.feed.results[indexPath.row].name) ?? ""
+                detailController?.detailModel.imageData = (model?.feed.results[indexPath.row].artworkUrl100) ?? ""
             }
         }
     }
