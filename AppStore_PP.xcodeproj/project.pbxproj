@@ -124,7 +124,6 @@
 		7C418F3A2765F3C9009F35F7 /* LoginVC */ = {
 			isa = PBXGroup;
 			children = (
-				7C5A3101275B49540092BB6C /* LoginViewController.swift */,
 				7C418F382765E22B009F35F7 /* KeyboardNotification.swift */,
 				7C418F3F2765F555009F35F7 /* Firebase.swift */,
 			);
@@ -154,7 +153,6 @@
 			children = (
 				7C8C2F27275E4F59001C4B7A /* DetailViewController.swift */,
 				7CF22EBD2766370D008B00B8 /* ShapeAnimationLayer.swift */,
-				7CA591DB2760B4BE004AE8C6 /* AppearanceUIelements.swift */,
 			);
 			path = DetailVC;
 			sourceTree = "<group>";
@@ -162,18 +160,27 @@
 		7C418F3E2765F425009F35F7 /* TabBarVC */ = {
 			isa = PBXGroup;
 			children = (
+				7CA591DB2760B4BE004AE8C6 /* AppearanceUIelements.swift */,
 				7C418F3B2765F3DE009F35F7 /* TopFreeVC */,
 				7C418F3C2765F3EF009F35F7 /* TopPaidVC */,
 			);
 			path = TabBarVC;
 			sourceTree = "<group>";
 		};
-		7C7CDB59275CA325007EB420 /* View Controllers */ = {
+		7C6EE84E27870BB40069EEAA /* View */ = {
 			isa = PBXGroup;
 			children = (
 				7C80C4432753879D00A7394A /* Main.storyboard */,
-				7C418F3A2765F3C9009F35F7 /* LoginVC */,
+				7C5A3101275B49540092BB6C /* LoginViewController.swift */,
 				7C418F3E2765F425009F35F7 /* TabBarVC */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7C7CDB59275CA325007EB420 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C418F3A2765F3C9009F35F7 /* LoginVC */,
 				7C418F3D2765F402009F35F7 /* DetailVC */,
 			);
 			path = "View Controllers";
@@ -224,8 +231,9 @@
 				7C80C43D2753879D00A7394A /* AppDelegate.swift */,
 				7C80C43F2753879D00A7394A /* SceneDelegate.swift */,
 				7C7CDB5C275CA5B8007EB420 /* Model */,
-				7C7CDB5F275CA6E0007EB420 /* Network */,
+				7C6EE84E27870BB40069EEAA /* View */,
 				7C7CDB59275CA325007EB420 /* View Controllers */,
+				7C7CDB5F275CA6E0007EB420 /* Network */,
 				7C80C4492753879F00A7394A /* Assets.xcassets */,
 				7C7142DD276607E00008B7F5 /* Notes.rtf */,
 				7C80C44B2753879F00A7394A /* LaunchScreen.storyboard */,

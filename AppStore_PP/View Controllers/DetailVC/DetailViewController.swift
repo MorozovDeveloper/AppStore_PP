@@ -20,7 +20,7 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         appearanceUIelements()
         
         guard let receivedImage = try? Data(contentsOf: URL(string: detailModel.imageData)!) else {return}

@@ -19,12 +19,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = 10
-        registerButton.layer.cornerRadius = 10
         warnLabel.alpha = 0
         
         reference = Database.database().reference(withPath: "users") // сохранение юзера в базе
@@ -55,11 +53,11 @@ class LoginViewController: UIViewController {
     }
     
     // Проверка зарегестрированного пользователя
-    @IBAction func loginTapped(_ sender: UIButton) {
+    @IBAction func loginTapped() {
         createLogin()
     }
     // Регистрация нового юзера
-    @IBAction func registerTapped(_ sender: UIButton) {
+    @IBAction func registerTapped() {
         registerUser()
     }
 }

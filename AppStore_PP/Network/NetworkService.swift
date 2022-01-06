@@ -5,12 +5,11 @@
 //  Created by Oleg on 05.12.2021.
 //
 
-import Foundation
+
 import UIKit
 
 
 class NetworkService {
-    
     func parse(url: URL, completion: @escaping (Result<NetworkModel, Error>) -> Void){
         
         URLSession.shared.dataTask(with: url) { data, _, error in

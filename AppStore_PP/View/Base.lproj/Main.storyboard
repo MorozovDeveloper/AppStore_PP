@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RIa-Yd-93c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aQA-rX-YjP">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -322,7 +322,7 @@
                                             </attributedString>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="loginTapped:" destination="aQA-rX-YjP" eventType="touchUpInside" id="mZl-Xd-yuS"/>
+                                            <action selector="loginTapped" destination="aQA-rX-YjP" eventType="touchUpInside" id="fHj-e7-LsR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrD-mz-kDU">
@@ -340,7 +340,7 @@
                                             </attributedString>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="registerTapped:" destination="aQA-rX-YjP" eventType="touchUpInside" id="gbs-Tk-qxP"/>
+                                            <action selector="registerTapped" destination="aQA-rX-YjP" eventType="touchUpInside" id="cIZ-rl-nMG"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -21,7 +21,7 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
         fetch()
     }
     
-    private func  fetch() {
+    private func fetch() {
         guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/apps/top-paid/25/apps.json") else {return}
         networking.parse(url: url) { result in
             
@@ -59,22 +59,22 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell2 = tableView.dequeueReusableCell(withIdentifier: "Cell2", for: indexPath) as? TopPaidTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2", for: indexPath) as? TopPaidTableViewCell
         
-        cell2?.nameLabel.text = model?.feed.results[indexPath.row].name
-        cell2?.descriptionLabel.text = model?.feed.results[indexPath.row].genres.first?.name
-        cell2?.priceLabel.text = "\(fakePrice.randomElement()!) ₽"
-        cell2?.priceLabel.layer.cornerRadius = 7
-        cell2?.priceLabel.clipsToBounds = true
-        cell2?.priceLabel.layer.borderWidth = 0.2
-        cell2?.priceLabel.layer.borderColor = UIColor.black.cgColor
+        cell?.nameLabel.text = model?.feed.results[indexPath.row].name
+        cell?.descriptionLabel.text = model?.feed.results[indexPath.row].genres.first?.name
+        cell?.priceLabel.text = "\(fakePrice.randomElement()!) ₽"
+        cell?.priceLabel.layer.cornerRadius = 7
+        cell?.priceLabel.clipsToBounds = true
+        cell?.priceLabel.layer.borderWidth = 0.2
+        cell?.priceLabel.layer.borderColor = UIColor.black.cgColor
         
-        guard let receivedImage = try? Data(contentsOf: URL(string: (model?.feed.results[indexPath.row].artworkUrl100)!)!) else {return cell2!}
-        cell2?.imageLabel.image = UIImage(data: receivedImage)
-        cell2?.imageLabel.layer.cornerRadius = 20
-        cell2?.imageLabel.clipsToBounds = true
+        guard let receivedImage = try? Data(contentsOf: URL(string: (model?.feed.results[indexPath.row].artworkUrl100)!)!) else {return cell!}
+        cell?.imageLabel.image = UIImage(data: receivedImage)
+        cell?.imageLabel.layer.cornerRadius = 20
+        cell?.imageLabel.clipsToBounds = true
         
-        return cell2!
+        return cell!
     }
     
     

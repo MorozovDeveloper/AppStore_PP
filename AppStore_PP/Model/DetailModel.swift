@@ -5,7 +5,7 @@
 //  Created by Oleg on 25.12.2021.
 //
 
-import Foundation
+
 import UIKit
 
 class DetailModel {
