@@ -5,7 +5,7 @@
 
 ```
 Применение:
-MVVC
+MVVM
 Firebase
 RestAPI
 KeyboardNotification
@@ -13,8 +13,6 @@ CAShapeLayer, CAAnimation
 ______________________________________
 
 Баги(в процессе исправления):
-- Не совсем верно сделано по архитектуре MVVC.
-Возможное решение: вынести view controllers не через extension, а через новый class.
 - Поработать над дизайном :)
 
 ```
