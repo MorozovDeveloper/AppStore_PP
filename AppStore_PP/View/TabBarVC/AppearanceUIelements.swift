@@ -10,7 +10,7 @@ import UIKit
 
 extension DetailViewController {
     
-    func appearanceUIelements() {
+     func appearanceUIelements() {
         colorView.layer.shadowOpacity = 8
         colorView.layer.shadowRadius = 8
         colorView.layer.cornerRadius = 25
