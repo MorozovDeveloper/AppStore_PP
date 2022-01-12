@@ -5,7 +5,7 @@
 
 ```
 Применение:
-MVVM
+MVC
 Firebase
 RestAPI
 KeyboardNotification
