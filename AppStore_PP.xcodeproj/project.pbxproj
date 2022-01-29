@@ -134,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				7C80C4412753879D00A7394A /* TopFreeViewController.swift */,
+				7C7CDB62275CAE8A007EB420 /* TopFreeTableViewCell.swift */,
 			);
 			path = TopFreeVC;
 			sourceTree = "<group>";
@@ -142,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				7C682877275E084000C83C2D /* TopPaidViewController.swift */,
+				7C682879275E094200C83C2D /* TopPaidTableViewCell.swift */,
 			);
 			path = TopPaidVC;
 			sourceTree = "<group>";
@@ -190,8 +192,6 @@
 			children = (
 				7C7CDB5A275CA37D007EB420 /* NetworkModel.swift */,
 				7C99EECF27774104004BE7BE /* DetailModel.swift */,
-				7C7CDB62275CAE8A007EB420 /* TopFreeTableViewCell.swift */,
-				7C682879275E094200C83C2D /* TopPaidTableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
