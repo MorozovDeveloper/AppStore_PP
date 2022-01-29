@@ -12,7 +12,6 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var model: NetworkModel?
-    var networking = NetworkService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,7 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func fetch() {
         guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/25/apps.json") else {return}
-        networking.parse(url: url) { result in
+        NetworkService.share.parse(url: url) { result in
             
             switch result {
             case .success(let model):
@@ -38,9 +37,8 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail" {
             if let indexPath  = self.tableView.indexPathForSelectedRow {
-                let detailController = segue.destination as? DetailViewController
-                detailController!.detailModel.detailData = (model?.feed.results[indexPath.row].name) ?? ""
-                detailController?.detailModel.imageData = (model?.feed.results[indexPath.row].artworkUrl100) ?? ""
+                DetailModel.share.detailData = (model?.feed.results[indexPath.row].name) ?? ""
+                DetailModel.share.imageData = (model?.feed.results[indexPath.row].artworkUrl100) ?? ""
             }
         }
     }
@@ -54,7 +52,6 @@ class TopFreeViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TopFreeTableViewCell
         
         cell?.nameLabel.text = model?.feed.results[indexPath.row].name

@@ -10,6 +10,9 @@ import UIKit
 
 
 class NetworkService {
+    static var share = NetworkService()
+    private init() {}
+    
     func parse(url: URL, completion: @escaping (Result<NetworkModel, Error>) -> Void){
         
         URLSession.shared.dataTask(with: url) { data, _, error in

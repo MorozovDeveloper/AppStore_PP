@@ -8,9 +8,18 @@
 import Foundation
 import UIKit
 
-extension DetailViewController {
+    class AppearanceUIelements {
+        static var share = AppearanceUIelements()
+        private init() {}
     
-     func appearanceUIelements() {
+        func appearanceUIelements(colorView: UIView,
+                                  loadBuyButton: UIButton,
+                                  detailName: UILabel,
+                                  detailImage: UIImageView,
+                                  detailPrice: UILabel,
+                                  detailWallet: UILabel,
+                                  view: UIView!) {
+            
         colorView.layer.shadowOpacity = 8
         colorView.layer.shadowRadius = 8
         colorView.layer.cornerRadius = 25
@@ -29,10 +38,10 @@ extension DetailViewController {
         detailPrice.layer.cornerRadius = 7
         detailPrice.clipsToBounds = true
         
-        detailWallet.text = "Счет: \(detailModel.myWallet) ₽"
+        detailWallet.text = "Счет: \(DetailModel.share.myWallet) ₽"
         detailWallet.textColor = view.backgroundColor
         
-        if detailModel.priceData == nil {
+        if DetailModel.share.priceData == nil {
             detailPrice.isHidden = true
             loadBuyButton.setTitle("Загрузить", for: .normal)
             loadBuyButton.setTitleColor(UIColor.red, for: .normal)
@@ -40,7 +49,7 @@ extension DetailViewController {
             loadBuyButton.layer.cornerRadius = 15
             loadBuyButton.setTitleColor(.white, for: .normal)
         } else {
-            detailPrice.text = "\(detailModel.priceData!) ₽"
+            detailPrice.text = "\(DetailModel.share.priceData!) ₽"
             loadBuyButton.setTitle("Купить ₽", for: .normal)
             loadBuyButton.backgroundColor = .systemGreen
             loadBuyButton.layer.cornerRadius = 15

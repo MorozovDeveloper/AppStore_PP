@@ -16,30 +16,34 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
     @IBOutlet weak var loadBuyButton: UIButton!
     @IBOutlet weak var colorView: UIView!
     
-    var detailModel = DetailModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appearanceUIelements()
+        AppearanceUIelements.share.appearanceUIelements(colorView: colorView,
+                                                        loadBuyButton: loadBuyButton,
+                                                        detailName: detailName,
+                                                        detailImage: detailImage,
+                                                        detailPrice: detailPrice,
+                                                        detailWallet: detailWallet,
+                                                        view: view)
         
-        guard let receivedImage = try? Data(contentsOf: URL(string: detailModel.imageData)!) else {return}
+        guard let receivedImage = try? Data(contentsOf: URL(string: DetailModel.share.imageData)!) else {return}
                 detailImage.image = UIImage(data: receivedImage)
-        detailName.text = detailModel.detailData
+        detailName.text = DetailModel.share.detailData
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        detailModel.shapeLayer = CAShapeLayer()
-        view.layer.addSublayer(detailModel.shapeLayer)
+        DetailModel.share.shapeLayer = CAShapeLayer()
+        view.layer.addSublayer(DetailModel.share.shapeLayer)
         
-        detailModel.overShapeLayer = CAShapeLayer()
-        view.layer.addSublayer(detailModel.overShapeLayer)
+        DetailModel.share.overShapeLayer = CAShapeLayer()
+        view.layer.addSublayer(DetailModel.share.overShapeLayer)
         
-        configShapeLayer(detailModel.shapeLayer)
-        configShapeLayer(detailModel.overShapeLayer)
+        configShapeLayer(DetailModel.share.shapeLayer)
+        configShapeLayer(DetailModel.share.overShapeLayer)
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -58,10 +62,10 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
             
             animation.delegate = self
             
-            detailModel.overShapeLayer.add(animation, forKey: nil)
+            DetailModel.share.overShapeLayer.add(animation, forKey: nil)
             
         }  else {
-            alertController(title: "Купить?", message: "Со счета будет списано: \(detailModel.priceData!) ₽")
+            alertController(title: "Купить?", message: "Со счета будет списано: \(DetailModel.share.priceData!) ₽")
         }
     }
     
@@ -76,7 +80,7 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
                        options: .curveEaseOut,
                        animations: {[weak self] in self?.detailWallet.alpha = 0})
         {[weak self] complete in self?.detailWallet.alpha = 1
-            self?.detailWallet.text = "Счет: \(self!.detailModel.myWallet - self!.detailModel.priceData) ₽"
+            self?.detailWallet.text = "Счет: \(DetailModel.share.myWallet - DetailModel.share.priceData) ₽"
             self?.detailWallet.textColor = self?.view.backgroundColor}
     }
     
@@ -84,14 +88,14 @@ class DetailViewController: UIViewController, CAAnimationDelegate {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Купить", style:  .default) { _ in
             
-            if self.detailModel.myWallet > self.detailModel.priceData {
-                self.detailWallet.text = "Счет: \(self.detailModel.myWallet - self.detailModel.priceData) ₽"
+            if DetailModel.share.myWallet > DetailModel.share.priceData {
+                self.detailWallet.text = "Счет: \(DetailModel.share.myWallet - DetailModel.share.priceData) ₽"
                 self.detailPrice.text = "Куплено"
                 self.loadBuyButton.setTitle("Загрузить", for: .normal)
                 self.loadBuyButton.backgroundColor = self.view.backgroundColor
                 self.loadBuyButton.layer.cornerRadius = 15
                 self.loadBuyButton.setTitleColor(.white, for: .normal)
-                self.displayWalletLabel(withText: "-\(self.detailModel.priceData!)₽")
+                self.displayWalletLabel(withText: "-\(DetailModel.share.priceData!)₽")
             } else {
                 let alertError = UIAlertController(title: "Недостаточно средств", message: "Пополните баланс", preferredStyle: .alert)
                 let alertActionError = UIAlertAction(title: "OK", style:  .default)

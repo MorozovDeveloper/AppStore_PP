@@ -9,6 +9,8 @@
 import UIKit
 
 class DetailModel {
+    static var share = DetailModel()
+    private init() {}
     
     var detailData: String!
     var imageData: String!

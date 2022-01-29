@@ -12,7 +12,6 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var model: NetworkModel?
-    var networking = NetworkService()
     
     var fakePrice = [100.00, 500.00, 6000.00]
     
@@ -23,7 +22,7 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func fetch() {
         guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/apps/top-paid/25/apps.json") else {return}
-        networking.parse(url: url) { result in
+        NetworkService.share.parse(url: url) { result in
             
             switch result {
             case . success(let model):
@@ -40,10 +39,9 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail2" {
             if let indexPath = self.tableView.indexPathForSelectedRow{
-                guard let detailController = segue.destination as? DetailViewController else {return}
-                detailController.detailModel.detailData = (model?.feed.results[indexPath.row].name) ?? ""
-                detailController.detailModel.imageData = (model?.feed.results[indexPath.row].artworkUrl100) ?? ""
-                detailController.detailModel.priceData = fakePrice.randomElement()
+                DetailModel.share.detailData = (model?.feed.results[indexPath.row].name) ?? ""
+                DetailModel.share.imageData = (model?.feed.results[indexPath.row].artworkUrl100) ?? ""
+                DetailModel.share.priceData = fakePrice.randomElement()
             }
         }
     }
@@ -54,11 +52,9 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
             return (model?.feed.results.count)!
         }
         return 0
-        
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2", for: indexPath) as? TopPaidTableViewCell
         
         cell?.nameLabel.text = model?.feed.results[indexPath.row].name
@@ -76,6 +72,5 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell!
     }
-    
     
 }
