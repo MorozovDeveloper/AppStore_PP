@@ -10,7 +10,6 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
-    let segueIdentifier = "ShowDetail"
     var reference: DatabaseReference! // для сохранения юзера
     
     @IBOutlet weak var warnLabel: UILabel!

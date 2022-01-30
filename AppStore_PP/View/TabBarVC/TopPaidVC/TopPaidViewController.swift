@@ -13,8 +13,6 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var model: NetworkModel?
     
-    var fakePrice = [100.00, 500.00, 6000.00]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetch()
@@ -41,7 +39,7 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let indexPath = self.tableView.indexPathForSelectedRow{
                 DetailModel.share.detailData = (model?.feed.results[indexPath.row].name) ?? ""
                 DetailModel.share.imageData = (model?.feed.results[indexPath.row].artworkUrl100) ?? ""
-                DetailModel.share.priceData = fakePrice.randomElement()
+                DetailModel.share.priceData = DetailModel.share.fakePrice.randomElement()
             }
         }
     }
@@ -49,7 +47,7 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
     // TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if model != nil {
-            return (model?.feed.results.count)!
+            return model?.feed.results.count ?? 00
         }
         return 0
     }
@@ -57,20 +55,8 @@ class TopPaidViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2", for: indexPath) as? TopPaidTableViewCell
         
-        cell?.nameLabel.text = model?.feed.results[indexPath.row].name
-        cell?.descriptionLabel.text = model?.feed.results[indexPath.row].genres.first?.name
-        cell?.priceLabel.text = "\(fakePrice.randomElement()!) ₽"
-        cell?.priceLabel.layer.cornerRadius = 7
-        cell?.priceLabel.clipsToBounds = true
-        cell?.priceLabel.layer.borderWidth = 0.2
-        cell?.priceLabel.layer.borderColor = UIColor.black.cgColor
-        
-        guard let receivedImage = try? Data(contentsOf: URL(string: (model?.feed.results[indexPath.row].artworkUrl100)!)!) else {return cell!}
-        cell?.imageLabel.image = UIImage(data: receivedImage)
-        cell?.imageLabel.layer.cornerRadius = 20
-        cell?.imageLabel.clipsToBounds = true
+        cell?.configure(with: model!, cellForRowAt: indexPath)
         
         return cell!
     }
-    
 }

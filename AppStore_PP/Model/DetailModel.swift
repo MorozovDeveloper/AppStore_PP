@@ -17,6 +17,8 @@ class DetailModel {
     var priceData: Double!
     var myWallet = 3000.0
     
+    var fakePrice = [100.00, 500.00, 6000.00]
+    
     var shapeLayer: CAShapeLayer! {
         didSet {
             shapeLayer.lineWidth = 20

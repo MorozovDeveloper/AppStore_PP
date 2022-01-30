@@ -24,12 +24,12 @@ extension LoginViewController {
                 return
             }
             if user != nil {
-                self?.performSegue(withIdentifier: self!.segueIdentifier, sender: nil)// если всё ОК то делай переход
+                self?.performSegue(withIdentifier: "ShowDetail", sender: nil)// если всё ОК то делай переход
             }
             
             self?.displayWarninfLabel(withText: "No such user")
         }
-        )
+      )
     }
     
     func registerUser() {
@@ -48,8 +48,6 @@ extension LoginViewController {
             userRef.setValue(user.email, forKey: "email")
             
         }
-        
     }
-    
     
 }
