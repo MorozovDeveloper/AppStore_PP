@@ -4,7 +4,7 @@
 //
 //  Created by Oleg on 25.12.2021.
 //
-//
+
 
 import UIKit
 
@@ -40,5 +40,7 @@ class DetailModel {
             overShapeLayer.strokeColor = color
         }
     }
-    
 }
+
+
+// test
